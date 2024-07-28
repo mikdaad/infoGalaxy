@@ -2,7 +2,7 @@
   "name": "infogalaxy",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mikdaad.github.io/infogalaxy/",
+  "homepage": "https://mikdaad.github.io/infogalax",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
@@ -44,7 +44,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1",
+    "gh-pages": "^5.0.0",
     "react-router-dom": "^6.14.2"
   }
 }
