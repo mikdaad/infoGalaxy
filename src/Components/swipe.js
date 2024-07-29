@@ -3,9 +3,29 @@ import { useSwipeable } from 'react-swipeable';
 import "../Styles/swipe.css";
 
 const TextSwiper = ({ textString }) => {
-  
-    const text = typeof textString === 'string' && textString.trim() !== '' 
-    ? textString.split('.').map(sentence => sentence.trim()).filter(sentence => sentence !== '') 
+  const maxDots = 3;
+    const text =   typeof textString === 'string' && textString.trim() !== '' 
+    ? (() => {
+        let dotCount = 0;
+        let lastSplitIndex = 0;
+        const parts = [];
+
+        for (let i = 0; i < textString.length; i++) {
+            if (textString[i] === '.') {
+                dotCount++;
+                if (dotCount === maxDots) {
+                    parts.push(textString.slice(lastSplitIndex, i));
+                    lastSplitIndex = i + 1; // Update last split index to the character after the dot
+                    dotCount = 0; // Reset dot count
+                }
+            }
+        }
+
+        // Add the remaining part of the string after the last split
+        parts.push(textString.slice(lastSplitIndex));
+
+        return parts;
+    })() 
     : [];
   console.log(text);
 

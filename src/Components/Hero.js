@@ -41,7 +41,7 @@ function Hero() {
           Information Within Reach
           </h2>
           <p className="text-descritpion">
-          A new way to interact with the data available on wikipideia . make exploration more 
+          A new way to interact with the data available on wikipedia . make exploration more 
           fun , by our interactive web tools . 
           Note : this website is still under development.
           </p>

@@ -233,7 +233,7 @@ function AppointmentForm() {
     <form class="newform" action={handleSearch}>
         <input class="newinput" type="search" 
               value={username}
-              onChange={handleidChange } placeholder="Search here ...">
+              onChange={handleidChange } placeholder="ex: julius ceaser">
         
         </input>
         <i class="fa fa-search" onClick={handleSearch}>🔎</i>
