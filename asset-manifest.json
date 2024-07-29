@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/infogalax/static/css/main.9d04668a.css",
-    "main.js": "/infogalax/static/js/main.9165fe35.js",
+    "main.js": "/infogalax/static/js/main.ff704e56.js",
     "static/media/home.mp3": "/infogalax/static/media/home.3df0f8e3416c941cb14c.mp3",
     "static/media/doctor-picture.png": "/infogalax/static/media/doctor-picture.19ce44a721dd72ea4fc1.png",
     "static/media/profile-1.png": "/infogalax/static/media/profile-1.16f15af974b804d29b02.png",
     "static/media/profile-2.png": "/infogalax/static/media/profile-2.616598743d82ae6c34aa.png",
     "static/media/log.png": "/infogalax/static/media/log.0d00a038f6f6fed4880f.png",
-    "static/media/profile-3.jpg": "/infogalax/static/media/profile-3.e0c94db299039d6525ea.jpg",
+    "static/media/profile-3.jpg": "/infogalax/static/media/profile-3.2f8977fc6a667e1bb193.jpg",
     "index.html": "/infogalax/index.html",
     "main.9d04668a.css.map": "/infogalax/static/css/main.9d04668a.css.map",
-    "main.9165fe35.js.map": "/infogalax/static/js/main.9165fe35.js.map"
+    "main.ff704e56.js.map": "/infogalax/static/js/main.ff704e56.js.map"
   },
   "entrypoints": [
     "static/css/main.9d04668a.css",
-    "static/js/main.9165fe35.js"
+    "static/js/main.ff704e56.js"
   ]
 }
