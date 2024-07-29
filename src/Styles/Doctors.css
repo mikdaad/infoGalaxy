@@ -58,12 +58,17 @@
     background-position: center;
     background-color: #DDE5F8;
     border-radius: 20px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+
 }
 .dt-card-name {
     margin: 12px 0 0 0;
     font-size: 22px;
     font-weight: bold;
     letter-spacing: .7px;
+    text-decoration: underline;
+  text-decoration-color: #310456;
 }
 .dt-card-title {
     margin: 6px 0 8px;

@@ -2,10 +2,15 @@ import { useEffect, useRef, useState } from "react";
 import React, { useContext } from 'react';
 import { Link } from "react-router-dom";
 import "../Styles/AppointmentForm.css";
+import "../Styles/search.css";
 import { ToastContainer, toast } from "react-toastify";
 import SliderComponent from "../Pages/slider";
 import { useNavigate  } from "react-router-dom";
-import home from "./home.mp3"
+import home from "./home.mp3";
+import ImageGallery from "./images";
+import TextSwiper from "./swipe";
+import Getimages from "./getimages";
+import Gettext from "./gettext";
 
 
 import axios from "axios";
@@ -44,6 +49,9 @@ function AppointmentForm() {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [textLines, setTextLines] = useState([]);
+  const [images, setImages] = useState([]);
+  const [isimage, setIsimage] = useState(false);
+  const [istext, setIstext] = useState(false);
  
 
   
@@ -68,11 +76,31 @@ function AppointmentForm() {
 
       const response = await axios.post(invokeUrl, body);
       console.log(response);
+      console.log(response.data.images);
+      const imageurlss=response.data.images;
+      const imageUrls = [
+        "https://upload.wikimedia.org/wikipedia/commons/0/02/AAP_Symbol.png",
+        "https://upload.wikimedia.org/wikipedia/commons/2/27/Arrow_Blue_Left_001.svg",
+        "https://upload.wikimedia.org/wikipedia/commons/4/45/Arrow_Blue_Right_001.svg",
+        // ... add all other URLs here
+      ];
+      let imageurlsss = JSON.parse(imageurlss);
+      setIsimage(true);
+      setImages(imageurlsss);
+      
       
       const text=response.data.body
-      const lines = text.split("\n");
+      
+    
+      const lines = text.replace(/(^"|"$)/g, '') // Remove leading/trailing quotes
+                             .replace(/\\n/g, '\n') // Replace escaped newlines with actual newlines
+                             .replace(/\\\\/g, '\\'); // Replace double backslashes with a single backslash if needed
+      console.log("Array structure:", );
+      const mainText = JSON.stringify(text, null, 2);
+      setIstext(true);
       setTextLines(lines);
       console.log(lines);
+     
       
         
             
@@ -85,6 +113,9 @@ function AppointmentForm() {
       }
     
   };
+
+  
+  
  
 
   const  handleNameChange = async (e) => {
@@ -193,74 +224,43 @@ function AppointmentForm() {
         <Link to="/">
         InfoGalaxy
         </Link>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <button className="text-appointment-btnew" onClick={handleStop}> 🎵OFF</button>
       </h1>
+      <body class="newbody">
+    <form class="newform" action={handleSearch}>
+        <input class="newinput" type="search" 
+              value={username}
+              onChange={handleidChange } placeholder="Search here ...">
+        
+        </input>
+        <i class="fa fa-search" onClick={handleSearch}>🔎</i>
+        
+
+        
+    </form>
+    
+</body>
+<p className="para">Kindly specify the query clearly.</p>
+
+
+
+
+
+      
 
       <div className="form-container">
-        <h2 className="form-title">
-          <span>Kindly specify the query clearly.  </span>
-          <span> </span>
-          <span> </span>
-          <span> </span>
-          <span> </span>
-          
-        </h2>
-        <h2>
-        <button className="text-appointment-btn" onClick={handleStop}> 🎵OFF</button>
-        </h2>
-
-        <form className="form-content" onSubmit={handleSearch}>
-
-        {(patientGender==="1")&&<SliderComponent valb={7399}  onDataUpdate={handleChildData} minm={2199} />}
-          {(patientGender==="2")&&<SliderComponent valb={6520}  onDataUpdate={handleChildData} minm={1850} />}
-          {(patientGender==="3")&&<SliderComponent valb={4300}  onDataUpdate={handleChildData} minm={1230} />}
-          {(patientGender==="4")&&<SliderComponent valb={2600}  onDataUpdate={handleChildData} minm={745} />}
-          {(patientGender==="5")&&<SliderComponent valb={2600}  onDataUpdate={handleChildData} minm={745} />}
-          {(patientGender==="6")&&<SliderComponent valb={3600}  onDataUpdate={handleChildData} minm={1030} />}
-          <br />
-          
-          <label>
-            search query :
-            <input
-              type="text"
-              value={username}
-              onChange={handleidChange }
-              required
-              
-            />
-             <button   onClick={handleSearch} className="text-appointment-btn">
-          
-          SEARCH🟢
-          
-          
-          </button>
-   
-             
-              </label>
-              
-          <br />
-
-          <br />
-
-          <div className="hero-sectionew">
-        <div className="text-sectionew">
-         
-          <h2 className="text-titlenew">
-          {username.toUpperCase()}
-          </h2>
-          <p className="text-descritpionew">
       
-          {textLines}
-          </p>
-         
-        </div>
-        </div>
-
-
-          <br />
-          
+      
+       
         
-          
-        </form>
+       
+        {(istext)&&(<Gettext textLines = {textLines} username = {username}/>)}
+        {(isimage)&&(<Getimages images = {images}/>)}
+       
+
       </div>
 
       <div className="legal-footer">
@@ -269,7 +269,10 @@ function AppointmentForm() {
 
       <ToastContainer autoClose={5000} limit={1} closeButton={false} />
     </div>
+    
+    
   );
+  
 }
 
 export default AppointmentForm;

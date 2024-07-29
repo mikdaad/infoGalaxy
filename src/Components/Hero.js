@@ -41,15 +41,16 @@ function Hero() {
           Information Within Reach
           </h2>
           <p className="text-descritpion">
-          At INFOgalaxy , we strive to provide a comprehensive and collaborative platform for knowledge sharing. 
-          Our mission is to provide  a rich repository of information accessible to everyone.
+          A new way to interact with the data available on wikipideia . make exploration more 
+          fun , by our interactive web tools . 
+          Note : this website is still under development.
           </p>
           <button
             className="text-appointment-btn"
             type="button"
             onClick={handleBookAppointmentClick}
           >
-            INFOgalaxy <FontAwesomeIcon icon={faArrowRightToCity}/> 
+            GetStarted <FontAwesomeIcon icon={faArrowRightToCity}/> 
           </button>
         </div>
 
