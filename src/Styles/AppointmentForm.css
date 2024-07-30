@@ -1,3 +1,248 @@
+.text-appointment-btnews {
+   
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 28px;
+    outline: transparent;
+    background-color: #000000;
+    font-size: 9px;
+    width: 5%;
+    height: 5%;
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: .8px;
+    cursor: pointer;
+    transition: all .4s ease;
+}
+
+.text-titlenew {
+    width: 100%;
+    color: rgb(13, 80, 7);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.tabbutton {
+   
+    color: rgb(1, 0, 0);
+    border: 1px solid transparent;
+    border-radius: 15px;
+    outline: transparent;
+    background-color: #04e941;
+    font-size: 14px;
+    width: 5%;
+    height: 5%;
+    font-family: 'Rubik', sans-serif;
+   
+    letter-spacing: .8px;
+    cursor: pointer;
+    transition: all .4s ease;
+}
+
+.tabbutton:hover {
+    color: #1A8EFD;
+    background-color: transparent;
+    border: 1px solid #1A8EFD;
+}
+
+.tabs{
+    display: flex;
+    flex-direction: row;
+
+
+}
+
+
+
+
+.legal-siteTitlenew {
+    padding: 16px 0; /* Increased padding for better spacing */
+    border-radius: 8px; /* Slightly larger border radius */
+    background-color: #f9f9f9; /* Light background color for a subtle contrast */
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+    font-size: 48px; /* Adjust font size as needed */
+    color: #0409a0; /* Base color of the text */
+    text-align: center; /* Center the text */
+    font-family: 'Poppins', sans-serif; /* Change to your desired font */
+    text-shadow: 
+        0 0 5px rgba(38, 5, 202, 0.8),  /* Light blue glow */
+        0 0 10px rgba(26, 142, 253, 0.6), /* Medium glow */
+        0 0 15px rgba(26, 142, 253, 0.4), /* Stronger glow */
+        0 0 20px rgba(26, 142, 253, 0.2); /* Faded glow */
+    transition: text-shadow 0.3s ease;/* Smooth transition effects */
+}
+
+.legal-siteTitlenew:hover {
+    background-color: #e6f0ff; /* Light blue background on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+}
+
+.legal-siteTitlenew a {
+    text-decoration: none;
+    color: #1A8EFD; /* Primary link color */
+    font-size: 48px;
+    letter-spacing: 0.8px;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.legal-siteTitlenew a:hover {
+    color: #0056b3; /* Darker shade for the link on hover */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow for depth */
+}
+
+@media (max-width: 768px) {
+    .legal-siteTitlenew {
+        padding: 12px 0; /* Adjust padding for smaller screens */
+    }
+
+    .legal-siteTitlenew a {
+        font-size: 36px; /* Decrease font size for mobile */
+    }
+    .ril__outer {
+        /* Ensure the lightbox takes full screen on mobile */
+        width: 100vw;
+        height: 100vh;
+      }
+      .ril__image {
+        /* Ensure the image scales correctly */
+        max-width: 100%;
+        max-height: 100%;
+      }
+}
+
+.legal-siteTitlenews {
+   /* Increased padding for better spacing */
+    border-radius: 8px; /* Slightly larger border radius */
+    background-color: #f9f9f9; /* Light background color for a subtle contrast */
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    /* Soft shadow for depth */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+    font-size: 48px; /* Adjust font size as needed */
+    color: #12cce0; /* Base color of the text */
+    text-align: center; /* Center the text */
+    font-family: 'Poppins', sans-serif; /* Change to your desired font */
+    text-shadow: 
+        0 0 5px rgba(5, 122, 240, 0.8),  /* Light blue glow */
+        0 0 10px rgba(7, 152, 231, 0.6), /* Medium glow */
+        0 0 15px rgba(46, 35, 244, 0.4), /* Stronger glow */
+        0 0 20px rgba(35, 19, 220, 0.2); /* Faded glow */
+    transition: text-shadow 0.3s ease;/* Smooth transition effects */
+}
+
+.legal-siteTitlenew:hover {
+    background-color: #e6f0ff; /* Light blue background on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+}
+
+.legal-siteTitlenew a {
+    text-decoration: none;
+    color: #1A8EFD; /* Primary link color */
+    font-size: 48px;
+    letter-spacing: 0.8px;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.legal-siteTitlenew a:hover {
+    color: #0056b3; /* Darker shade for the link on hover */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow for depth */
+}
+
+@media (max-width: 768px) {
+    .legal-siteTitlenew {
+        padding: 12px 0; /* Adjust padding for smaller screens */
+    }
+
+    .legal-siteTitlenew a {
+        font-size: 36px; /* Decrease font size for mobile */
+    }
+    .text-appointment-btnews {
+   
+        color: white;
+        border: 1px solid transparent;
+        border-radius: 28px;
+        outline: transparent;
+        background-color: #000000;
+        font-size: 9px;
+        width: 13%;
+        height: 10%;
+        font-family: 'Rubik', sans-serif;
+        letter-spacing: .8px;
+        cursor: pointer;
+        transition: all .4s ease;
+    }
+    .tabbutton {
+   
+        color: rgb(1, 0, 0);
+        border: 1px solid transparent;
+        border-radius: 15px;
+        outline: transparent;
+        background-color: #04e941;
+        font-size: 19px;
+        width: 20%;
+        margin: 2%;
+        height: 30%;
+        padding: 1%;
+        font-family: 'Rubik', sans-serif;
+        letter-spacing: .8px;
+        cursor: pointer;
+        transition: all .4s ease;
+    }
+    .text-titlenew {
+        width: 100%;
+        color: rgb(13, 80, 7);
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding:2%;
+        font-family: 'Poppins', sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+}
+
+
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    max-width: 600px; /* Adjust the width as needed */
+    margin: 20px auto; /* Center the search bar */
+    border: 1px solid #ccc;
+    border-radius: 30px; /* Rounded edges */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevents input from overflowing */
+}
+
+.search-input {
+    flex: 1; /* Allow input to take full width */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add padding */
+    font-size: 16px; /* Font size */
+    outline: none; /* Remove outline on focus */
+}
+
+.search-button {
+    background-color: #000000; /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add padding */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.search-button:hover {
+    background-color: #4b54e1; /* Darker shade on hover */
+}
+
+
 .form-container {
     padding: 32px;
     margin: 3%;
@@ -6,6 +251,17 @@
     gap: 40px;
     background: linear-gradient(to right, #9bd2f6, #94caee);
     border-radius: 50px;
+}
+
+.form-containernew {
+    padding: 0.05em;
+    margin: 3%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    background: linear-gradient(to right, #9bd2f6, #94caee);
+    border-radius: 50px;
+    overflow: auto;
 }
 
 .form-title {

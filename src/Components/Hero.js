@@ -52,6 +52,10 @@ function Hero() {
           >
             GetStarted <FontAwesomeIcon icon={faArrowRightToCity}/> 
           </button>
+          <p className="text-descritpion">
+          new update : full screen image , switchable tabs 
+          </p>
+          
         </div>
 
         <div className="hero-image-section">

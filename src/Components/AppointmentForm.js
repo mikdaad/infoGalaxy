@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "../Styles/AppointmentForm.css";
 import "../Styles/search.css";
 import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import SliderComponent from "../Pages/slider";
 import { useNavigate  } from "react-router-dom";
 import home from "./home.mp3";
@@ -11,6 +12,7 @@ import ImageGallery from "./images";
 import TextSwiper from "./swipe";
 import Getimages from "./getimages";
 import Gettext from "./gettext";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 
 import axios from "axios";
@@ -52,6 +54,10 @@ function AppointmentForm() {
   const [images, setImages] = useState([]);
   const [isimage, setIsimage] = useState(false);
   const [istext, setIstext] = useState(false);
+  const [code, setCode] = useState(false);
+  const [sugs, setSugs] = useState([]);
+  const [content, setContent] = useState(false);
+
  
 
   
@@ -60,9 +66,30 @@ function AppointmentForm() {
   const handleChildData = (dataFromChild) => {
     setChildData(dataFromChild);
   };
+  
+
+ 
+
+  const handleButtonClick = (index) => {
+    const text = sugs[index];
+  
+    console.log(text);
+    setusername(text);
+    
+    setCode(false);
+    setContent(true);
+    
+    (function init() {
+      handleSearch();
+  })();
+  setIstext(true);
+  setIsimage(true);
+    
+};
 
   const handleSearch = async (e) => {
     try {
+      setCode(false);
       const invokeUrl = 'https://q40huzkrs2.execute-api.eu-north-1.amazonaws.com/1/';
       
     
@@ -73,17 +100,22 @@ function AppointmentForm() {
         "base":username,
         "exponent":2
       };
+      let toastId = null;
+      toastId = toast.loading("Processing...");
 
       const response = await axios.post(invokeUrl, body);
       console.log(response);
+
+      toast.dismiss(toastId);
+      if (response.data.code == "0"){
+        
+       
+        setContent(true);
+        console.log("jaloo");
+
+       
       console.log(response.data.images);
       const imageurlss=response.data.images;
-      const imageUrls = [
-        "https://upload.wikimedia.org/wikipedia/commons/0/02/AAP_Symbol.png",
-        "https://upload.wikimedia.org/wikipedia/commons/2/27/Arrow_Blue_Left_001.svg",
-        "https://upload.wikimedia.org/wikipedia/commons/4/45/Arrow_Blue_Right_001.svg",
-        // ... add all other URLs here
-      ];
       let imageurlsss = JSON.parse(imageurlss);
       setIsimage(true);
       setImages(imageurlsss);
@@ -95,20 +127,48 @@ function AppointmentForm() {
       const lines = text.replace(/(^"|"$)/g, '') // Remove leading/trailing quotes
                              .replace(/\\n/g, '\n') // Replace escaped newlines with actual newlines
                              .replace(/\\\\/g, '\\'); // Replace double backslashes with a single backslash if needed
-      console.log("Array structure:", );
-      const mainText = JSON.stringify(text, null, 2);
+      
       setIstext(true);
       setTextLines(lines);
       console.log(lines);
      
       
-        
+     
             
           
 
 
       setPatientName(lines);
-    }  catch (error) {
+    } 
+    if (response.data.code == "1")
+    {
+      setIstext(false);
+      setContent(true);
+      console.log("balo");
+      const body = JSON.parse(response.data.body);
+      console.log(body);
+      setCode(true);
+      setSugs(body);
+
+      
+
+    }
+    if (response.data.code == "2")
+      {
+        let toastId = toast.loading("The requested page is not found, please try a different one.");
+        setusername("");
+      
+        // Update the toast with a new message after 2 seconds
+        setTimeout(() => {
+          toast.update(toastId, {
+            render: "Please find a different page.",
+            type: "error",
+            isLoading: false, // Set loading to false
+            autoClose: 3000, // Automatically close after 3 seconds
+          });
+        }, 2000);
+      }}
+     catch (error) {
         console.error(error);
       }
     
@@ -216,34 +276,38 @@ function AppointmentForm() {
       onOpen: () => setIsSubmitted(true),
       onClose: () => setIsSubmitted(false),
     });
+
+    
+
   };
 
   return (
     <div className="appointment-form-section">
-      <h1 className="legal-siteTitle">
+      <h1 className="legal-siteTitlenew">
         <Link to="/">
-        InfoGalaxy
+        InFo <span className="legal-siteTitlenews"> Galaxy </span>
         </Link>
         <span> </span>
         <span> </span>
         <span> </span>
-        <button className="text-appointment-btnew" onClick={handleStop}> 🎵OFF</button>
+        <button className="text-appointment-btnews" onClick={handleStop}> 🎵OFF</button>
       </h1>
-      <body class="newbody">
-    <form class="newform" action={handleSearch}>
-        <input class="newinput" type="search" 
-              value={username}
-              onChange={handleidChange } placeholder="ex: julius ceaser">
-        
-        </input>
-        <i class="fa fa-search" onClick={handleSearch}>🔎</i>
-        
 
-        
-    </form>
-    
-</body>
-<p className="para">Kindly specify the query clearly.</p>
+<div className="search-bar-container">
+            <input
+                type="text"
+                value={username}
+                onChange={handleidChange}
+                placeholder="Search..."
+                className="search-input"
+            />
+            <button onClick={handleSearch} className="search-button">
+                🔍
+            </button>
+        </div>
+
+
+<p className="para"></p>
 
 
 
@@ -251,17 +315,47 @@ function AppointmentForm() {
 
       
 
-      <div className="form-container">
+{(content)&& <div >
+
+      {(code)&&<div className="form-containernew">
+        <h4 className="dt-titlenew">
+          <span>suggestions </span>
+        </h4>
+      
+            {sugs.map((option, index) => (
+              <button key={index} className="text-appointment-btnsug"  onClick={() => handleButtonClick(index)} >
+                    {option}
+                </button>
+            ))}
+        </div>}
       
       
        
         
        
-        {(istext)&&(<Gettext textLines = {textLines} username = {username}/>)}
-        {(isimage)&&(<Getimages images = {images}/>)}
+        <Tabs>
+        
+      <TabList>
+      <div className= "tabs" >
+        <Tab className= "tabbutton" >Text</Tab>
+        <Tab className= "tabbutton">Images</Tab>
+        </div>
+        
+      </TabList>
+
+      <TabPanel>
+        {istext && <Gettext textLines={textLines} username={username} />}
+      </TabPanel>
+      <TabPanel>
+        {isimage && <Getimages images={images} />}
+      </TabPanel>
+  
+    </Tabs>
+ 
        
 
       </div>
+}
 
       <div className="legal-footer">
         <p>© 2024  infogalaxy+. All rights reserved.</p>

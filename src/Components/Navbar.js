@@ -31,16 +31,9 @@ function Navbar() {
   return (
     <div className="navbar-section">
        
-       <h1 className="navbar-title">
-
-        <Link to="/">
-              INFO
-        </Link>
-        <Link to="/"  className="mik-img">
-              GALAXY🌌
-        </Link>
-        
-      </h1>
+       <p className="ft-title">
+              Info <span className="ft-sign">Galaxy</span>
+            </p>
       
 
       {/* Desktop */}
