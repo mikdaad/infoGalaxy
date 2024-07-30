@@ -14,7 +14,7 @@
     height: 70%;
     padding: 20px;
     font-size: clamp(1.5em, 2.5vw, 1.5em); /* Responsive font size */
-    overflow: auto;
+    overflow: hidden;
     font-weight: 700;
     margin: 20px;
     background-color: #f6f6f6;
