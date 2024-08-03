@@ -196,26 +196,6 @@ function AppointmentForm() {
   };
 
 
-  useEffect(() => {
-    audioRef.current = new Audio(home); 
-    const playAudio = async () => {
-      try {
-        await audioRef.current.play();
-        setIsPlaying(true);
-      } catch (error) {
-        console.error('Error playing the audio:', error);
-      }
-    };
-    playAudio();
-
-    // Clean up function to stop the audio when the component unmounts
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.currentTime = 0;
-      }
-    };
-  }, []);
 
   const handleStop = () => {
     if (audioRef.current) {
@@ -290,7 +270,7 @@ function AppointmentForm() {
         <span> </span>
         <span> </span>
         <span> </span>
-        <button className="text-appointment-btnews" onClick={handleStop}> 🎵OFF</button>
+        
       </h1>
 
 <div className="search-bar-container">
