@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+    import { useEffect, useRef, useState } from "react";
 import React, { useContext } from 'react';
 import { Link } from "react-router-dom";
 import "../Styles/AppointmentForm.css";
@@ -29,6 +29,7 @@ const options = {
 
 
 
+
 //const translations = response.data[0].translations[0].text;
 
 
@@ -37,7 +38,7 @@ function AppointmentForm() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-
+  
   const [patientName, setPatientName] = useState("");
   const [patientNumber, setPatientNumber] = useState("");
   const [username, setusername] = useState("");
@@ -47,7 +48,6 @@ function AppointmentForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formErrors, setFormErrors] = useState({});
   const [childData, setChildData] = useState(2100);
-  const [minms, setminm] = useState(2100);
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [textLines, setTextLines] = useState([]);
@@ -57,7 +57,7 @@ function AppointmentForm() {
   const [code, setCode] = useState(false);
   const [sugs, setSugs] = useState([]);
   const [content, setContent] = useState(false);
-
+  
  
 
   
@@ -69,34 +69,34 @@ function AppointmentForm() {
   
 
  
-
+  const [searchTriggered, setSearchTriggered] = useState(false);
   const handleButtonClick = (index) => {
-    const text = sugs[index];
-  
-    console.log(text);
-    setusername(text);
     
     setCode(false);
-    setContent(true);
+    const text = sugs[index];
+    setusername(text);
+    setSearchTriggered(true);
+  };
+
+  useEffect(() => {
     
-    (function init() {
+    if (searchTriggered) {
+      console.log(username);  
       handleSearch();
-  })();
-  setIstext(true);
-  setIsimage(true);
-    
-};
+      setSearchTriggered(false);
+    }
+  }, [searchTriggered]);
 
   const handleSearch = async (e) => {
     try {
-      setCode(false);
-      const invokeUrl = 'https://q40huzkrs2.execute-api.eu-north-1.amazonaws.com/1/';
       
+      const invokeUrl = 'https://q40huzkrs2.execute-api.eu-north-1.amazonaws.com/1/';
+
+    
     
 
       
       const body = {
-        // Assuming the body needs to be sent as JSON
         "base":username,
         "exponent":2
       };
@@ -108,20 +108,14 @@ function AppointmentForm() {
 
       toast.dismiss(toastId);
       if (response.data.code == "0"){
-        
-       
-        setContent(true);
-        console.log("jaloo");
 
        
-      console.log(response.data.images);
-      const imageurlss=response.data.images;
-      let imageurlsss = JSON.parse(imageurlss);
-      setIsimage(true);
-      setImages(imageurlsss);
+      setContent(true);
+    
       
       
       const text=response.data.body
+     
       
     
       const lines = text.replace(/(^"|"$)/g, '') // Remove leading/trailing quotes
@@ -131,24 +125,25 @@ function AppointmentForm() {
       setIstext(true);
       setTextLines(lines);
       console.log(lines);
+
+      console.log(response.data.images);
+      const imageurlss=response.data.images;
+      let imageurlsss = JSON.parse(imageurlss);
+      setIsimage(true);
+      setImages(imageurlsss);
+      setContent(true);
      
       
-     
-            
-          
-
-
-      setPatientName(lines);
     } 
     if (response.data.code == "1")
     {
       setIstext(false);
       setContent(true);
-      console.log("balo");
       const body = JSON.parse(response.data.body);
       console.log(body);
       setCode(true);
       setSugs(body);
+      
 
       
 
@@ -209,39 +204,9 @@ function AppointmentForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    
-    const allls= "Client name : " + patientName + "\n client username: " + username +"\n client time: " + appointmentTime +"\n client course: " + patientGender +"\n client price: " + childData  + "\n client Batch: "+ preferredMode;
 
 
-    const webhookUrl = "https://discordapp.com/api/webhooks/1255908211601703004/1jM3LEzTu25bTOY48y6xDKtJO-U8ZkKSz8O9jXS5X-df4RdFOVvXiOerG2HJQq6zxvEO";
-    const payload = {
-      content: allls
 
-    };
-    const headers = {
-      Authorization: "MTE4NDE1OTI4NjE3NjI2ODM1OA.GoRXyJ.w_Oqd6Wj40SwZ2JUrZdBUlMhCkrexxE0gpJAKw"
-  };
-    try {
-       fetch(webhookUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          ...headers
-      },
-        body: JSON.stringify(payload),
-      });
-      alert('error processing !');
-    } catch (error) {
-      console.error('Error handling request:', error);
-    }
-    
-    navigate("/payment");
-  ;
-
-
-    // Validate form inputs
-    const errors = {};
-    
 
     // Reset form fields and errors after successful submission
     setPatientName("");
