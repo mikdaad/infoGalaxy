@@ -11,13 +11,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 24px;
+   
     background: linear-gradient(to right, #ECF2FF, #FBFCFF);
 }
-.text-sectionew {
-    width: 100%;
-    
-}
+
 
 .text-descritpionew {
     width: 100%;

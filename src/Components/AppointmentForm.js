@@ -1,4 +1,4 @@
-    import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import React, { useContext } from 'react';
 import { Link } from "react-router-dom";
 import "../Styles/AppointmentForm.css";
@@ -12,6 +12,7 @@ import ImageGallery from "./images";
 import TextSwiper from "./swipe";
 import Getimages from "./getimages";
 import Gettext from "./gettext";
+import MusicPlayer from "./music";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 
@@ -232,9 +233,11 @@ function AppointmentForm() {
         <Link to="/">
         InFo <span className="legal-siteTitlenews"> Galaxy </span>
         </Link>
+        
         <span> </span>
         <span> </span>
         <span> </span>
+        <MusicPlayer/>
         
       </h1>
 

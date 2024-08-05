@@ -11,11 +11,7 @@ function Gettext({textLines,username}) {
           <h2 className="text-titlenew">
           {username.toUpperCase()}
           </h2>
-          <br/>
-          <br/>
-
-          <br/>
-
+         
 
 
         

@@ -27,19 +27,20 @@
 
 .tabbutton {
    
-    color: rgb(1, 0, 0);
-    border: 1px solid transparent;
-    border-radius: 15px;
-    outline: transparent;
-    background-color: #04e941;
-    font-size: 14px;
-    width: 5%;
-    height: 5%;
-    font-family: 'Rubik', sans-serif;
-   
-    letter-spacing: .8px;
-    cursor: pointer;
-    transition: all .4s ease;
+        color: rgb(1, 0, 0);
+        border: 1px solid transparent;
+        border-radius: 15px;
+        outline: transparent;
+        background-color: #63cde7;
+        font-size: 13px;
+        width: 6%;
+        margin: 2%;
+        height: 8%;
+        padding: 1%;
+        font-family: 'Rubik', sans-serif;
+        letter-spacing: .8px;
+        cursor: pointer;
+        transition: all .4s ease;
 }
 
 .tabbutton:hover {
@@ -114,6 +115,17 @@
         max-width: 100%;
         max-height: 100%;
       }
+
+      .text-titlenew {
+        width: 100%;
+        color: rgb(13, 80, 7);
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        font-size: 25px;
+        font-weight: bold;
+    }
 }
 
 .legal-siteTitlenews {
@@ -154,6 +166,10 @@
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow for depth */
 }
 
+.text-sectionew {
+    width:100%;
+    
+}
 @media (max-width: 768px) {
     .legal-siteTitlenew {
         padding: 12px 0; /* Adjust padding for smaller screens */
@@ -183,9 +199,9 @@
         border: 1px solid transparent;
         border-radius: 15px;
         outline: transparent;
-        background-color: #04e941;
-        font-size: 19px;
-        width: 20%;
+        background-color: #63cde7;
+        font-size: 10px;
+        width: 12%;
         margin: 2%;
         height: 30%;
         padding: 1%;
@@ -194,17 +210,7 @@
         cursor: pointer;
         transition: all .4s ease;
     }
-    .text-titlenew {
-        width: 100%;
-        color: rgb(13, 80, 7);
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding:2%;
-        font-family: 'Poppins', sans-serif;
-        font-size: 30px;
-        font-weight: bold;
-    }
+    
     
 }
 
