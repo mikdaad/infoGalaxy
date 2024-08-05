@@ -14,7 +14,7 @@ function Hero() {
   };
 
   const handleBookAppointmentClick = () => {
-    navigate("/appointment");
+    navigate("/search");
   };
 
   useEffect(() => {
@@ -41,19 +41,19 @@ function Hero() {
           Information Within Reach
           </h2>
           <p className="text-descritpion">
-          A new way to interact with the data available on wikipedia . make exploration more 
+          A new way to interact with the data available on wikipedia . making exploration more 
           fun , by our interactive web tools . 
-          Note : this website is still under development.
+          Note : this website is  under development.
           </p>
           <button
             className="text-appointment-btn"
             type="button"
             onClick={handleBookAppointmentClick}
           >
-            GetStarted <FontAwesomeIcon icon={faArrowRightToCity}/> 
+            search🔎<FontAwesomeIcon icon={faArrowRightToCity}/> 
           </button>
           <p className="text-descritpion">
-          new update : full screen image , switchable tabs 
+          new update : relaxing music while reading  
           </p>
           
         </div>
