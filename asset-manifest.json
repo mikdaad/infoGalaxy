@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/infogalaxy/static/css/main.e01b61cf.css",
-    "main.js": "/infogalaxy/static/js/main.214c794a.js",
+    "main.css": "/infogalaxy/static/css/main.f5eb1244.css",
+    "main.js": "/infogalaxy/static/js/main.5837a3a9.js",
     "static/js/952.d7311226.chunk.js": "/infogalaxy/static/js/952.d7311226.chunk.js",
     "static/media/3.mp3": "/infogalaxy/static/media/3.9294036a0f691ad888e4.mp3",
     "static/media/6.mp3": "/infogalaxy/static/media/6.032f9a49c03e4a2eec81.mp3",
@@ -20,12 +20,12 @@
     "index.html": "/infogalaxy/index.html",
     "static/media/password lock.svg": "/infogalaxy/static/media/password lock.c05a68129107d1f7f775c2042d816719.svg",
     "static/media/email.svg": "/infogalaxy/static/media/email.4cd7b1e6d98efe4cb7667e51b0d06758.svg",
-    "main.e01b61cf.css.map": "/infogalaxy/static/css/main.e01b61cf.css.map",
-    "main.214c794a.js.map": "/infogalaxy/static/js/main.214c794a.js.map",
+    "main.f5eb1244.css.map": "/infogalaxy/static/css/main.f5eb1244.css.map",
+    "main.5837a3a9.js.map": "/infogalaxy/static/js/main.5837a3a9.js.map",
     "952.d7311226.chunk.js.map": "/infogalaxy/static/js/952.d7311226.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e01b61cf.css",
-    "static/js/main.214c794a.js"
+    "static/css/main.f5eb1244.css",
+    "static/js/main.5837a3a9.js"
   ]
 }
