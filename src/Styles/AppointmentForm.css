@@ -238,6 +238,7 @@
 .search-button {
     background-color: #000000; /* Button color */
     color: white; /* Text color */
+    width: 20%;
     border: none; /* Remove border */
     padding: 10px 20px; /* Add padding */
     cursor: pointer; /* Change cursor to pointer */

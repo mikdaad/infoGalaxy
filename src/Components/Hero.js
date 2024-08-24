@@ -53,7 +53,7 @@ function Hero() {
             search🔎<FontAwesomeIcon icon={faArrowRightToCity}/> 
           </button>
           <p className="text-descritpion">
-          new update : relaxing music while reading  
+          upcoming : database backend to store , retrieve data.
           </p>
           
         </div>

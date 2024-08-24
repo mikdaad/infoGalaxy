@@ -1,6 +1,6 @@
 import React from "react";
 import DoctorCard from "./DoctorCard";
-import profile1 from "../Assets/profile-1.png";
+import profile1 from "../Assets/profile-1.jpg";
 import profile2 from "../Assets/profile-2.png";
 import profile3 from "../Assets/profile-3.jpg";
 

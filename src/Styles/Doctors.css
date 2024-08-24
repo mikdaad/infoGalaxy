@@ -63,17 +63,16 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 32px;
+    
 }
 .dt-card {
     width: 332px;
     height: 400px;
-    gap: 10px;
     text-align: left;
     font-family: 'Rubik', sans-serif;
 }
 .dt-card-img {
-    width: 40%;
+    width: 50%;
     height: 40%;
    
     background-position: center;

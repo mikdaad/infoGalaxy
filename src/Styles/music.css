@@ -55,4 +55,145 @@
 
     
 }
+
+
+
+
+.musicc-player {
   
+  
+  display: flex;
+  justify-content: right;
+  padding: 6px 10px;
+  align-items: center;
+  height: 10vh;
+  background: linear-gradient(to right, #fbf9f9, #ffffff);
+  font-family: 'Arial', sans-serif;
+}
+
+.musicc-select {
+  width:20%;
+  height:40%;
+  
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1a9746;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.musicc-select:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+
+.musicc-select:focus {
+  outline: none;
+  box-shadow: 0 0 3px 2px rgba(0, 123, 255, 0.25);
+}
+
+@media (max-width: 768px) {
+
+  .musicc-player {
+    display: flex;
+    justify-content: right;
+    padding: 6px 10px;
+    align-items: center;
+    height: 10vh;
+    
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .musicc-select {
+    width:80px;
+    height:20px;
+    font-size: 9px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5fb0ce;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 80px;
+    margin-left: 330px;
+  }
+
+  
+}
+
+@media (max-width: 444px) {
+
+  .musicc-player {
+    display: flex;
+    justify-content: right;
+    padding: 6px 10px;
+    align-items: center;
+    height: 10vh;
+    
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .musicc-select {
+    width:40%;
+    height:30%;
+    font-size: 9px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5fb0ce;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding-bottom: 30px;
+    margin-bottom: 80px;
+    margin-left: 100px;
+  }
+
+  
+}
+
+
+.auth-button-container {
+  
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  
+  height: 5vh;
+}
+
+.auth-button {
+  padding-bottom: 10px;
+  font-size: 16px;
+  border: none;
+  width:23%;
+  height:70%;
+  border-radius: 15px;
+  background-color: #5fb0ce;
+  color: white;
+  box-shadow: 0 4px 6px rgba(1, 1, 1, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: 'Arial', sans-serif;
+}
+
+.auth-button:hover {
+  background-color: #f0f0f0;
+  color: #070d53;
+}
+
+.auth-button:focus {
+  outline: none;
+  box-shadow: 0 0 3px 2px rgba(8, 90, 177, 0.25);
+}
+
+@media (max-width: 768px) {
+  .auth-button {
+    padding: 3px 5px;
+    font-size: 9px;
+    background-color: #0640a3;
+  }
+}

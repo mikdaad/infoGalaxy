@@ -13,7 +13,9 @@ import TextSwiper from "./swipe";
 import Getimages from "./getimages";
 import Gettext from "./gettext";
 import MusicPlayer from "./music";
+import Sign from "./sign";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import supabase from './supabaseclient';
 
 
 import axios from "axios";
@@ -58,16 +60,24 @@ function AppointmentForm() {
   const [code, setCode] = useState(false);
   const [sugs, setSugs] = useState([]);
   const [content, setContent] = useState(false);
+  const [signbtn, setsignbtn] = useState(false);
+  const [searchbtn,setsearchbtn] = useState(true);
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [fetched, setfetched] = useState(false);
+  
+  
   
  
 
   
 
+const handleAuthAction = () =>
+{
+  setsignbtn(!signbtn);
+  setsearchbtn(!searchbtn);
+}
 
-  const handleChildData = (dataFromChild) => {
-    setChildData(dataFromChild);
-  };
-  
 
  
   const [searchTriggered, setSearchTriggered] = useState(false);
@@ -201,6 +211,33 @@ function AppointmentForm() {
     }
   };
 
+  const FetchDataComponent = () => {
+    
+  
+    useEffect(() => {
+      const fetchData = async () => {
+        setLoading(true);
+        const { data, error } = await supabase
+          .from('users')
+          .select('*');
+        
+        if (error) {
+          console.error('Error fetching data:', error);
+        } else {
+          setData(data);
+        }
+        setLoading(false);
+      };
+  
+      fetchData();
+    }, []);
+  
+    if (loading) return <p>Loading...</p>;
+  
+  
+  };
+  
+
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -238,15 +275,25 @@ function AppointmentForm() {
         <span> </span>
         <span> </span>
         <MusicPlayer/>
+  <div className="musicc-player">
+  <button className="musicc-select" onClick={handleAuthAction} >
+    Sign In / Sign Up
+  </button>
+  
+</div>
         
       </h1>
+      
+      {(signbtn)&& <Sign  fetched={fetched}  setfetched={setfetched} signbtn={signbtn} setsignbtn={setsignbtn}/>}
 
-<div className="search-bar-container">
+
+
+{(searchbtn)&&<div><div className="search-bar-container">
             <input
                 type="text"
                 value={username}
                 onChange={handleidChange}
-                placeholder="Search..."
+                placeholder="Search for any topic..."
                 className="search-input"
             />
             <button onClick={handleSearch} className="search-button">
@@ -256,12 +303,21 @@ function AppointmentForm() {
 
 
 <p className="para"></p>
+</div>
+}
 
 
 
 
-
+{(fetched)&&<div>
       
+      <ul>
+        {data.map(item => (
+          <li key={item.id}>{JSON.stringify(item)}</li>
+        ))}
+      </ul>
+    </div>
+}
 
 {(content)&& <div >
 

@@ -2,7 +2,7 @@
     padding: 0;
     margin: 5%;
     height: 9vh;
-    width: 90%;
+    width: 50%;
     background: #000000;
     text-align: center;
     justify-content: center;
@@ -22,6 +22,8 @@
     border: 4px solid white;
     padding: 5px;
 }
+
+
 
 .newinput{
     position: absolute;
